@@ -31,6 +31,7 @@ def train():
         label2id[l] = i
 
     # train_data = json.load(open(train_path))
+    
     with open(train_path) as f:
         train_data = []
         for line in f.readlines():
