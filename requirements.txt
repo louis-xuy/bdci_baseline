@@ -3,3 +3,4 @@ numpy==1.23.2
 scikit_learn==1.1.2
 tqdm==4.62.3
 transformers==4.5.0
+tensorflow

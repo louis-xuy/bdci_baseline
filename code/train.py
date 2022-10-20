@@ -30,7 +30,12 @@ def train():
         id2label[str(i)] = l
         label2id[l] = i
 
-    train_data = json.load(open(train_path))
+    # train_data = json.load(open(train_path))
+    with open(train_path) as f:
+        train_data = []
+        for line in f.readlines():
+            dic = json.loads(line)
+            train_data.append(dic)
     id2predicate, predicate2id = json.load(open(rel2id_path))
     all_data = np.array(train_data)
 
