@@ -43,6 +43,8 @@ class BertDecoderLayer(nn.Module):
         )
         attention_output = cross_attention_outputs[0] 
         outputs = outputs + cross_attention_outputs[1:] 
+        
+        intermediate_output = self.intermediate(attention_output)
         layer_output = self.output(intermediate_output, attention_output)
         outputs = (layer_output,) + outputs
         return outputs
